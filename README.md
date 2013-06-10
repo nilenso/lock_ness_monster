@@ -1,29 +1,19 @@
-# LockNessMonster
+# Lock Ness Monster
 
-TODO: Write a gem description
+Lock all your gem versions down!
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'lock_ness_monster'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install lock_ness_monster
 
 ## Usage
 
-TODO: Write usage instructions here
+Navigate to your project directory and run:
 
-## Contributing
+```bash
+  $ lock_ness_monster
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Credits
+
+[![Nilenso](https://s3.amazonaws.com/nilenso/nilenso.png)](http://nilenso.com)
