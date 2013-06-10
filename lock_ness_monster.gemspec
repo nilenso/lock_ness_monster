@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["mail@timothyandrew.net", "jithug87@gmail.com"]
   spec.description   = %q{Lock your gem versions down.}
   spec.summary       = ""
-  spec.homepage      = "http://nilenso.com/"
+  spec.homepage      = "http://github.com/nilenso/lock_ness_monster"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
