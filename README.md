@@ -2,16 +2,21 @@
 
 Lock all your gem versions down!
 
+Does your Gemfile look like this?
+
+```ruby
+```
+
 ## Installation
-
-    $ gem install lock_ness_monster
-
+```bash
+$ gem install lock_ness_monster
+```
 ## Usage
 
 Navigate to your project directory and run:
 
 ```bash
-  $ lock_ness_monster
+$ lock_ness_monster
 ```
 
 ## Credits
