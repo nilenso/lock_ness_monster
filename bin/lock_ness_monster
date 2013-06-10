@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'lock_ness_monster'
+
+LockNessMonster::lock
