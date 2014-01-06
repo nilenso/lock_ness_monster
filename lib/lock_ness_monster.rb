@@ -2,6 +2,11 @@ require "lock_ness_monster/version"
 
 module LockNessMonster
   def self.lock
+    unless File.exists?("Gemfile")
+      puts "Gemfile not present. Nothing to lock."
+      return
+    end
+
     gems = IO.readlines(File.join(Dir.pwd, "Gemfile"))
 
     puts "* Looking for gem versions"
