@@ -14,7 +14,7 @@ module LockNessMonster
     end
 
     gems.map! do |line|
-      match = line.match /\s*gem\s['"](\S+)['"]\s*$/
+      match = line.match /^\s*gem\s['"](\S+)['"]\s*$/
       if match
         gem_name = match[1].strip
         version_number = installed_gems[gem_name]
