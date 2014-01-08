@@ -2,6 +2,11 @@ require "lock_ness_monster/version"
 
 module LockNessMonster
   def self.lock
+    unless File.exists?("Gemfile")
+      puts "Gemfile not present. Nothing to lock."
+      return
+    end
+
     gems = IO.readlines(File.join(Dir.pwd, "Gemfile"))
 
     puts "* Looking for gem versions"
@@ -14,7 +19,7 @@ module LockNessMonster
     end
 
     gems.map! do |line|
-      match = line.match /\s*gem\s['"](\S+)['"]\s*$/
+      match = line.match /^\s*gem\s['"](\S+)['"]\s*$/
       if match
         gem_name = match[1].strip
         version_number = installed_gems[gem_name]
