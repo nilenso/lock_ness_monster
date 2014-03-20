@@ -13,7 +13,12 @@ module LockNessMonster
 
     installed_gems = %x{bundle exec gem list}.split("\n").reduce({}) do |hash, gem|
       match = gem.match(/(\S+)\s\((\S+).*\)/)
-      gem_name, version = match[1], match[2]
+      if match
+        gem_name, version = match[1], match[2]
+      else
+        puts "Match not found for #{gem}."
+        abort
+      end
       hash[gem_name] = version
       hash
     end
