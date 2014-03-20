@@ -11,11 +11,15 @@ module LockNessMonster
 
     puts "* Looking for gem versions"
 
-    installed_gems = %x{bundle exec gem list}.split("\n").reduce({}) do |hash, gem|
-      match = gem.match(/(\S+)\s\((\S+)\)/)
-      gem_name, version = match[1], match[2]
+    installed_gems = %x{bundle exec gem list}.split("\n").each_with_object({}) do |gem_name_with_version, hash|
+      match = gem_name_with_version.match(/(\S+)\s\((\S+).*\)/)
+      if match
+        gem_name, version = match[1], match[2]
+      else
+        puts "Unable to lock #{gem_name_with_version}."
+        next
+      end
       hash[gem_name] = version
-      hash
     end
 
     gems.map! do |line|
